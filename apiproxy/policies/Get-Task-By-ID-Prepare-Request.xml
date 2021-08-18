@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Get-Task-By-ID-Prepare-Request">
+    <DisplayName>Get Task By ID: Prepare Request</DisplayName>
+    <Properties/>
+    <Set>
+        <Path>/getById</Path>
+        <Payload contentType="application/json">
+            {
+                "id": "{inputs.id}"
+            }
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

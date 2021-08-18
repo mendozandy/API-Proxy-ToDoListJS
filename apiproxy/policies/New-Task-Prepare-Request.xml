@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="New-Task-Prepare-Request">
+    <DisplayName>New Task: Prepare Request</DisplayName>
+    <Properties/>
+    <Set>
+        <Path>/create</Path>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

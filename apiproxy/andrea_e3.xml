@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="6" name="andrea_e3">
+    <Basepaths>/edge_entrenamiento_especializado</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1628618239847</CreatedAt>
+    <CreatedBy>santiago.tortora@edge.com.py</CreatedBy>
+    <Description>Proxy para práctica de Andrea Mendoza</Description>
+    <DisplayName>andrea_e3</DisplayName>
+    <LastModifiedAt>1629067070029</LastModifiedAt>
+    <LastModifiedBy>anndrea1295@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:1a7eca9040e8c11153f84e949d417bba79f9ac81956a23c49f1965f2fb4b02a9395a64cdb233e017eaa4325f1e624043f9ad1f57d745223cbf8566f4820d183d:us-east-1</ManifestVersion>
+    <Policies>
+        <Policy>Check-Existence</Policy>
+        <Policy>Delete-Task-Extract-Variables</Policy>
+        <Policy>Delete-Task-Prepare-Request</Policy>
+        <Policy>Disable-Path-Suffix</Policy>
+        <Policy>Get-All-Tasks-Prepare-Request</Policy>
+        <Policy>Get-Task-By-ID-Extract-Variables</Policy>
+        <Policy>Get-Task-By-ID-Prepare-Request</Policy>
+        <Policy>New-Task-Prepare-Request</Policy>
+        <Policy>Raise-Not-Found</Policy>
+        <Policy>Update-Task-Extract-Variables</Policy>
+        <Policy>Update-Task-Prepare-Request</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

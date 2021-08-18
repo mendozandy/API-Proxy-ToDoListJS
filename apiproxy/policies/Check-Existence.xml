@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="true" enabled="true" name="Check-Existence">
+    <DisplayName>Check Existence</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>calloutResponse</Response>
+    <LocalTargetConnection>
+        <Path>/practica/andrea/tasks/{inputs.id}</Path>
+    </LocalTargetConnection>
+</ServiceCallout>

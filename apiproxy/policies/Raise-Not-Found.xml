@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Raise-Not-Found">
+    <DisplayName>Raise Not Found</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json">
+                {"msg": "Task with id {inputs.id} not found "}
+            </Payload>
+            <StatusCode>404</StatusCode>
+            <ReasonPhrase>Not Found</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

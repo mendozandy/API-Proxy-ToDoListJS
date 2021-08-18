@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="Get Task By Id">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Get-Task-By-ID-Extract-Variables</Name>
+                </Step>
+                <Step>
+                    <Name>Get-Task-By-ID-Prepare-Request</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tasks/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Get All Tasks">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Get-All-Tasks-Prepare-Request</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tasks") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Delete Task">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Delete-Task-Extract-Variables</Name>
+                </Step>
+                <Step>
+                    <Name>Check-Existence</Name>
+                </Step>
+                <Step>
+                    <Name>Raise-Not-Found</Name>
+                    <Condition>calloutResponse.status.code isnot 200</Condition>
+                </Step>
+                <Step>
+                    <Name>Delete-Task-Prepare-Request</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tasks/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="New Task">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>New-Task-Prepare-Request</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tasks") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Update Task">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Update-Task-Extract-Variables</Name>
+                </Step>
+                <Step>
+                    <Name>Update-Task-Prepare-Request</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tasks/*") and (request.verb = "PUT")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/practica/andrea</BasePath>
+        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
